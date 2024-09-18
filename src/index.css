@@ -1,0 +1,269 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles */
+:root {
+  --primary-color: #0077be;
+  --secondary-color: #ffd700;
+  --text-color: #333333;
+  --background-color:  #1f2937;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header styles */
+.header {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section styles */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?beach,surf');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Button styles */
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white;
+}
+
+.btn-primary:hover {
+  @apply bg-blue-700;
+  transform: translateY(-2px);
+}
+
+/* Section styles */
+.section {
+  @apply py-16;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-center mb-8;
+  color: var(--primary-color);
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md;
+}
+
+.form-input:focus {
+  @apply outline-none ring-2 ring-blue-500;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slower-pan {
+  0% {
+    transform: scale(1.1) translate(0%, 0%);
+  }
+  50% {
+    transform: scale(1.1) translate(-1%, -0.5%);
+  }
+  100% {
+    transform: scale(1.1) translate(0%, 0%);
+  }
+}
+
+.animate-slower-pan {
+  animation: slower-pan 40s ease-in-out infinite;
+}
+
+@keyframes slow-pan {
+  0% {
+    transform: scale(1.1) translate(0%, 0%);
+  }
+  50% {
+    transform: scale(1.1) translate(-2%, -1%);
+  }
+  100% {
+    transform: scale(1.1) translate(0%, 0%);
+  }
+}
+
+.animate-slow-pan {
+  animation: slow-pan 20s ease-in-out infinite;
+}
+
+/* Add these responsive adjustments */
+
+@media (max-width: 640px) {
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  #hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-height: 700px) {
+  #hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 4rem 0;
+  }
+}
+
+/* Add these styles to your existing CSS file */
+
+/* Responsive image grid */
+@media (max-width: 640px) {
+  #about .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Smooth hover effect for images */
+#about img {
+  transition: transform 0.3s ease-in-out;
+}
+
+#about img:hover {
+  transform: scale(1.05);
+}
+
+/* Enhance text readability */
+#about p {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Stylish section title */
+#about h2 {
+  position: relative;
+  display: inline-block;
+}
+
+#about h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #0077be;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* Adjust this value based on your header height */
+}
+
+/* Add this if you haven't already */
+#about {
+  scroll-margin-top: 6rem; /* Adjust this value based on your header height */
+}
+
+/* Services section styles */
+#services .grid {
+  @apply gap-8;
+}
+
+#services .service-card {
+  @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300;
+}
+
+#services .service-card:hover {
+  @apply shadow-xl -translate-y-1;
+}
+
+#services .service-icon {
+  @apply text-blue-600 text-4xl mb-4;
+}
+
+#services .service-title {
+  @apply text-xl font-semibold mb-2;
+}
+
+#services .service-description {
+  @apply text-gray-600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  #services .grid {
+    @apply grid-cols-1;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  #services .grid {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 1025px) {
+  #services .grid {
+    @apply grid-cols-3;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
