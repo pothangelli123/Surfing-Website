@@ -16,19 +16,19 @@ const Footer: React.FC = () => {
             <h3 className="text-2xl font-bold mb-4 text-violet-300">Quick Links</h3>
             <ul>
             <li><a href="/" className="hover:text-violet-200 transition duration-300">Home</a></li>
-            <li><a href="#surf-lessons" className="hover:text-violet-200 transition duration-300">Surf Lessons</a></li>
-              <li><a href="#surf-lessons" className="hover:text-violet-200 transition duration-300">Surf Lessons</a></li>
-              <li><a href="#sup-lessons" className="hover:text-violet-200 transition duration-300">SUP Lessons</a></li>
-              <li><a href="#rentals" className="hover:text-violet-200 transition duration-300">Rentals</a></li>
+            <li><a href="/" className="hover:text-violet-200 transition duration-300">Surf Lessons</a></li>
+              <li><a href="/" className="hover:text-violet-200 transition duration-300">SUP Lessons</a></li>
+              <li><a href="/" className="hover:text-violet-200 transition duration-300">Rentals</a></li>
+              <li><a href="#services" className="hover:text-violet-200 transition duration-300">Services</a></li>
               <li><a href="#about" className="hover:text-violet-200 transition duration-300">About Us</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4 text-violet-300">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-violet-200 transition duration-300">Facebook</a>
-              <a href="#" className="hover:text-violet-200 transition duration-300">Instagram</a>
-              <a href="#" className="hover:text-violet-200 transition duration-300">Twitter</a>
+              <a href="https://facebook.com" className="hover:text-violet-200 transition duration-300">Facebook</a>
+              <a href="https://instagram.com" className="hover:text-violet-200 transition duration-300">Instagram</a>
+              <a href="https://twitter.com" className="hover:text-violet-200 transition duration-300">Twitter</a>
             </div>
           </div>
         </div>
