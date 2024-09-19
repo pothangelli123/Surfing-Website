@@ -21,14 +21,16 @@ const Hero: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
+    const currentHeroRef = heroRef.current; // Store the current value of heroRef
+
+    if (currentHeroRef) {
+      observer.observe(currentHeroRef);
     }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+      if (currentHeroRef) {
+        observer.unobserve(currentHeroRef);
       }
     };
   }, [controls]);
