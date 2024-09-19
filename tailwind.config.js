@@ -7,6 +7,10 @@ module.exports = {
         'blue': {
           600: '#2563eb',
         },
+        teal: {
+          400: '#4fd1c5',
+          // ... other teal shades
+        },
       },
     },
   },

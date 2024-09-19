@@ -2,38 +2,40 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="container mx-auto px-4">
+    <footer className="relative bg-gradient-to-b from-[#3b82f6] to-blue-900 text-white py-12 overflow-hidden">
+      <div className="wave-container">
+        <div className="wave"></div>
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-violet-300">Contact Us</h3>
-            <p>5-5080 Kuhio Highway</p>
-            <p>Hanalei, HI 96714</p>
-            <p>Phone: (808) 826-9283</p>
-            <p>Email: hanaleisurfschool@gmail.com</p>
+            <h3 className="text-2xl font-bold mb-4 text-cyan-300">Contact Us</h3>
+            <p className="text-blue-100">5-5080 Kuhio Highway</p>
+            <p className="text-blue-100">Hanalei, HI 96714</p>
+            <p className="text-blue-100">Phone: (808) 826-9283</p>
+            <p className="text-blue-100">Email: hanaleisurfschool@gmail.com</p>
           </div>
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-violet-300">Quick Links</h3>
+            <h3 className="text-2xl font-bold mb-4 text-cyan-300">Surf Programs</h3>
             <ul>
-            <li><a href="/" className="hover:text-violet-200 transition duration-300">Home</a></li>
-            <li><a href="/" className="hover:text-violet-200 transition duration-300">Surf Lessons</a></li>
-              <li><a href="/" className="hover:text-violet-200 transition duration-300">SUP Lessons</a></li>
-              <li><a href="/" className="hover:text-violet-200 transition duration-300">Rentals</a></li>
-              <li><a href="#services" className="hover:text-violet-200 transition duration-300">Services</a></li>
-              <li><a href="#about" className="hover:text-violet-200 transition duration-300">About Us</a></li>
+              <li><a href="/lessons" className="text-blue-100 hover:text-cyan-200 transition duration-300">Surf Lessons</a></li>
+              <li><a href="/sup-lessons" className="text-blue-100 hover:text-cyan-200 transition duration-300">SUP Lessons</a></li>
+              <li><a href="/rentals" className="text-blue-100 hover:text-cyan-200 transition duration-300">Equipment Rentals</a></li>
+              <li><a href="/camps" className="text-blue-100 hover:text-cyan-200 transition duration-300">Surf Camps</a></li>
+              <li><a href="/about" className="text-blue-100 hover:text-cyan-200 transition duration-300">About Us</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-violet-300">Follow Us</h3>
+            <h3 className="text-2xl font-bold mb-4 text-cyan-300">Connect With Us</h3>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="hover:text-violet-200 transition duration-300">Facebook</a>
-              <a href="https://instagram.com" className="hover:text-violet-200 transition duration-300">Instagram</a>
-              <a href="https://twitter.com" className="hover:text-violet-200 transition duration-300">Twitter</a>
+              <a href="https://facebook.com" className="text-blue-100 hover:text-cyan-200 transition duration-300">Facebook</a>
+              <a href="https://instagram.com" className="text-blue-100 hover:text-cyan-200 transition duration-300">Instagram</a>
+              <a href="https://twitter.com" className="text-blue-100 hover:text-cyan-200 transition duration-300">Twitter</a>
             </div>
           </div>
         </div>
         <div className="mt-8 text-center">
-          <p>&copy; 2024 Hanalei Surf School. All rights reserved.</p>
+          <p className="text-blue-200">&copy; 2024 Hanalei Surf School. Ride the waves with us!</p>
         </div>
       </div>
     </footer>
@@ -41,3 +43,13 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+// Add this to your globals.css or a new styles file
+// @keyframes wave {
+//   0% { background-position-x: 0; }
+//   100% { background-position-x: 1440px; }
+// }
+// 
+// .animate-wave {
+//   animation: wave 20s linear infinite;
+// }

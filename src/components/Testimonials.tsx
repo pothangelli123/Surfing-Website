@@ -47,7 +47,7 @@ const Testimonials: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextTestimonial();
-    }, 5000); // Change testimonial every 5 seconds
+    }, 2000); // Change testimonial every 2 seconds
 
     return () => clearInterval(interval);
   }, [nextTestimonial]);
