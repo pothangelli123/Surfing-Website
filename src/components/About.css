@@ -1,0 +1,23 @@
+.image-scroll-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-scroll-content {
+  display: flex;
+  animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.image-scroll-container:hover .image-scroll-content {
+  animation-play-state: paused;
+}

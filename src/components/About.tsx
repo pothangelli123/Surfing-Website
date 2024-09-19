@@ -1,12 +1,13 @@
 import React from 'react';
+import './About.css'; // We'll create this file for the animation styles
 
 const About: React.FC = () => {
   const images = [
-    '/instructor.jpg',
-    '/hanalei.jpg',
-    '/Surf4.jpg',
-    '/Surf5.jpg',
-    '/Surf6.jpg',
+    '/hnssurftwiiter.jpeg',
+    '/instagram 4.jpg',
+    '/instagramsurf.jpg',
+    '/instagram2.jpg',
+    '/instagram6.jpg',
   ];
 
   return (
@@ -14,8 +15,8 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col items-center">
         <h2 className="text-4xl font-bold text-center mb-12 text-black-600">About Hanalei Surf School</h2>
         
-        <div className="mb-12 overflow-hidden">
-          <div className="flex animate-scroll">
+        <div className="image-scroll-container mb-12 overflow-hidden w-full">
+          <div className="image-scroll-content">
             {[...images, ...images].map((src, index) => (
               <img 
                 key={index} 

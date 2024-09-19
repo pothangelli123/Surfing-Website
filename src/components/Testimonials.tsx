@@ -22,14 +22,14 @@ const testimonials: Testimonial[] = [
     name: "Mike Chen",
     role: "Intermediate Surfer",
     content: "The advanced techniques I learned here took my surfing to the next level. The instructors really know their stuff and the waves at Hanalei Bay are perfect for learning.",
-    image: "/testi1.jpg",
+    image: "/facebook8.jpg",
   },
   {
     id: 3,
     name: "Emma Watson",
     role: "Family Vacation",
     content: "Our family had an amazing time learning to surf together. The kids were naturals and the instructors made sure everyone was safe and having fun. Highly recommend!",
-    image: "/testi1.jpg",
+    image: "/twitterimage1.jpg",
   },
 ];
 
