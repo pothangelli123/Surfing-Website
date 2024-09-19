@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Testimonial {
@@ -36,74 +36,74 @@ const testimonials: Testimonial[] = [
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextTestimonial = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  }, []);
-
-  const prevTestimonial = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  }, []);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      nextTestimonial();
-    }, 2000); // Change testimonial every 2 seconds
-
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [nextTestimonial]);
+  }, []);
 
   return (
-    <section id="testimonials" className="py-16 bg-gradient-to-br from-blue-500 to-violet-600">
+    <section id="testimonials" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-white mb-12">What Our Students Say</h2>
+        <h2 className="text-5xl font-bold text-center text-black mb-16 relative">
+          <span className="relative z-10">Surf Stories</span>
+        </h2>
         <div className="relative">
+          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <svg className="w-3/4 h-3/4 text-white opacity-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-lg shadow-xl p-8 md:p-12 max-w-4xl mx-auto"
+              className="relative z-10 bg-white rounded-xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto"
             >
               <div className="flex flex-col md:flex-row items-center">
-                <img
-                  src={testimonials[currentIndex].image}
-                  alt={testimonials[currentIndex].name}
-                  className="w-32 h-32 rounded-full object-cover mb-6 md:mb-0 md:mr-8"
-                />
-                <div>
-                  <p className="text-gray-600 italic mb-4">"{testimonials[currentIndex].content}"</p>
-                  <h3 className="text-xl font-semibold">{testimonials[currentIndex].name}</h3>
-                  <p className="text-gray-500">{testimonials[currentIndex].role}</p>
+                <div className="md:w-1/3 mb-8 md:mb-0">
+                  <motion.img
+                    src={testimonials[currentIndex].image}
+                    alt={testimonials[currentIndex].name}
+                    className="w-40 h-40 rounded-full object-cover border-4 border-blue-300 shadow-lg"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  />
+                </div>
+                <div className="md:w-2/3 md:pl-8">
+                  <motion.p
+                    className="text-gray-700 text-lg italic mb-6"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    "{testimonials[currentIndex].content}"
+                  </motion.p>
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <h3 className="text-2xl font-semibold text-blue-600">{testimonials[currentIndex].name}</h3>
+                    <p className="text-gray-600">{testimonials[currentIndex].role}</p>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
-          <button
-            onClick={prevTestimonial}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition duration-300"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={nextTestimonial}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition duration-300"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
         </div>
         <div className="flex justify-center mt-8">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full mx-1 ${
-                index === currentIndex ? 'bg-white' : 'bg-gray-300'
+              className={`w-3 h-3 rounded-full mx-2 transition-all duration-300 ${
+                index === currentIndex ? 'bg-blue-600 scale-125' : 'bg-blue-300 hover:bg-blue-400'
               }`}
             />
           ))}
