@@ -19,10 +19,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4 text-cyan-300">Surf Programs</h3>
             <ul>
-              <li><a href="/lessons" className="text-blue-100 hover:text-cyan-200 transition duration-300">Surf Lessons</a></li>
-              <li><a href="/sup-lessons" className="text-blue-100 hover:text-cyan-200 transition duration-300">SUP Lessons</a></li>
-              <li><a href="/rentals" className="text-blue-100 hover:text-cyan-200 transition duration-300">Equipment Rentals</a></li>
-              <li><a href="/camps" className="text-blue-100 hover:text-cyan-200 transition duration-300">Surf Camps</a></li>
+              <li><a href="/" className="text-blue-100 hover:text-cyan-200 transition duration-300">Surf Lessons</a></li>
+              <li><a href="/" className="text-blue-100 hover:text-cyan-200 transition duration-300">SUP Lessons</a></li>
+              <li><a href="/" className="text-blue-100 hover:text-cyan-200 transition duration-300">Equipment Rentals</a></li>
+              <li><a href="/" className="text-blue-100 hover:text-cyan-200 transition duration-300">Surf Camps</a></li>
               <li><a href="/about" className="text-blue-100 hover:text-cyan-200 transition duration-300">About Us</a></li>
             </ul>
           </div>
